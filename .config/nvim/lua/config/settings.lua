@@ -1,5 +1,3 @@
-vim.cmd.colorscheme('tokyonight-night')
-
 vim.opt.rnu = true
 vim.opt.nu = true
 vim.opt.nuw = 3
