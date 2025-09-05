@@ -9,6 +9,8 @@ alias ls='ls --color=auto'
 alias grep='grep --color=auto'
 alias vim='nvim'
 alias neofetch='fastfetch'
+alias ffmpeg='ffmpeg -hide_banner'
+alias ffprobe='ffprobe -hide_banner'
 
 dotfile_opts="--git-dir=$HOME/.config/.dotfiles/ --work-tree=$HOME"
 alias dotfiles='/usr/bin/git $dotfile_opts'
