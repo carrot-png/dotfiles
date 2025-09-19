@@ -1,6 +1,7 @@
 vim.opt.rnu = true
 vim.opt.nu = true
 vim.opt.nuw = 3
+vim.opt.signcolumn = "no"
 vim.opt.scrolloff = 10
 vim.opt.smartindent = true
 vim.opt.hlsearch = false
@@ -17,3 +18,12 @@ vim.opt.backup = false
 vim.opt.undodir = os.getenv('HOME') .. '/.local/share/nvim/undodir'
 vim.opt.undofile = true
 
+vim.opt.list = true
+local space = "·"
+vim.opt.listchars = {
+  tab = "· ",
+  multispace = " ",
+  lead = " ",
+  trail = space,
+  nbsp = space
+}
