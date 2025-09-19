@@ -42,3 +42,10 @@ osc7_cwd() {
 }
 PROMPT_COMMAND=${PROMPT_COMMAND:+${PROMPT_COMMAND%;}; }osc7_cwd
 
+fav() {
+  local cmd
+  cmd=$(fzf < ~/.config/bash/favcmds.sh) || return
+  READLINE_LINE=$cmd
+  READLINE_POINT=${#cmd}
+}
+bind -x '"\C-f": fav'
