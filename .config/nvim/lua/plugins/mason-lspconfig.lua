@@ -5,14 +5,16 @@ return {
     { 'mason-org/mason.nvim', opts = {} },
     'neovim/nvim-lspconfig',
   },
-  config = function()
+  config = function(_, opts)
+    require('mason-lspconfig').setup(opts)
+
     vim.lsp.config('tinymist', {
-      cmd = { "tinymist" },
-      filetypes = { "typst" },
-      settings = {
-        exportPdf = "onType",
-      }
+      cmd = { 'tinymist' },
+      filetypes = { 'typst' },
+      settings = { 
+        exportPdf = 'onType' 
+      },
     })
-    vim.lsp.enable('tinymist')
   end,
 }
+
