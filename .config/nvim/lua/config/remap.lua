@@ -35,3 +35,18 @@ if lsp.inlay_hint then
     lsp.inlay_hint.enable(not lsp.inlay_hint.is_enabled())
   end)
 end
+
+--  Run current file
+local runners = {
+  javascript = "node %",
+  sh = "bash %"
+}
+
+for ft, cmd in pairs(runners) do
+  vim.api.nvim_create_autocmd('FileType', {
+    pattern = ft,
+    callback = function()
+      vim.keymap.set('n', '<leader>r', ':!' .. cmd .. '<CR>', { buffer = true})
+    end,
+  })
+end
