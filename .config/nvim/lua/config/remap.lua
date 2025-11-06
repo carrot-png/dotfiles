@@ -24,6 +24,7 @@ map('n', '<leader>n', vim.diagnostic.jump, { count = 1, float = true })
 map('n', '<leader>p', vim.diagnostic.jump, { count = -1, float = true })
 
 -- LSP actions
+map('n', '<F2>', lsp.buf.rename)
 map('n', '<F3>', lsp.buf.format, { async = true })
 map('n', '<F4>', lsp.buf.code_action)
 map('n', 'gd', lsp.buf.definition)
