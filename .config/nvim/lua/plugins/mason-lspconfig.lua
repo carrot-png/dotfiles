@@ -11,10 +11,10 @@ return {
     vim.lsp.config('tinymist', {
       cmd = { 'tinymist' },
       filetypes = { 'typst' },
-      settings = { 
-        exportPdf = 'onType' 
+      settings = {
+        formatterMode = 'typstyle',
+        exportPdf = 'onType'
       },
     })
   end,
 }
-
