@@ -27,3 +27,10 @@ vim.opt.listchars = {
   trail = space,
   nbsp = space
 }
+
+-- stop multiline comments on <Enter>
+vim.api.nvim_create_autocmd("BufEnter", {
+  callback = function()
+    vim.opt.formatoptions:remove { "o", "r" }
+  end
+})

@@ -1,6 +1,7 @@
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 vim.keymap.set('n', '<leader>pv', vim.cmd.Ex)
+vim.keymap.set('n', '<leader>a', 'ggVG')
 
 -- Open error diagnostics
 vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float)
@@ -47,7 +48,9 @@ for ft, cmd in pairs(runners) do
   vim.api.nvim_create_autocmd('FileType', {
     pattern = ft,
     callback = function()
-      vim.keymap.set('n', '<leader>r', ':!' .. cmd .. '<CR>', { buffer = true})
+      vim.keymap.set('n', '<leader>r',
+        '<cmd>lua vim.lsp.buf.format({async=false})<CR><cmd>silent w<bar>!' .. cmd .. '<CR>',
+        { buffer = true })
     end,
   })
 end
